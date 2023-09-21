@@ -1,2 +1,1 @@
-
-msgbox "Your text here", vbOKOnly + vbCritical + vbSystemModal, "Path Not Found"
+msgbox "RECYCLE",  vbCritical + vbSystemModal, ""
