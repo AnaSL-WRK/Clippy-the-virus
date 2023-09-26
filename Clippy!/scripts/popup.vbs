@@ -1,0 +1,2 @@
+
+msgbox "RECYCLE",  vbCritical + vbSystemModal, ""

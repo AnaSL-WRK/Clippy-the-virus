@@ -59,7 +59,7 @@ def run_final(vbscript_file):
 
 
 if __name__ == "__main__":
-    #multiprocessing.freeze_support()
+    multiprocessing.freeze_support()
     processes = []
 
 
@@ -135,7 +135,7 @@ if __name__ == "__main__":
     processes.append(process)
     process.start()
    
-    time.sleep(28)
+    time.sleep(27)
     
     mouse_listener.stop()
     

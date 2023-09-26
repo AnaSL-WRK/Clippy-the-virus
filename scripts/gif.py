@@ -1,7 +1,7 @@
 from tkinter import *
 from random import randint
 import time
-import os, ctypes
+import os
 
 root = Tk()
 global sec
@@ -14,6 +14,7 @@ timeout_start = time.time()
 
 
 def gif():
+
     simp_path1 = 'assets/spin_clip.gif'
     abs_path1 = os.path.abspath(simp_path1)
     

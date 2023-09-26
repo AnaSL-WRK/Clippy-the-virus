@@ -6,7 +6,7 @@ Set oShell = CreateObject("Shell.Application")
 Set oRecycleBin = oShell.Namespace(10)  ' 10 is the Recycle Bin
 Dim objShell
 Set objShell = Wscript.CreateObject("WScript.Shell")
-command = "powershell.exe -ExecutionPolicy Bypass -File ""bsod.ps1"""
+command = "powershell.exe -ExecutionPolicy Bypass -File ""scripts/bsod.ps1"""
 
 
 Ask
