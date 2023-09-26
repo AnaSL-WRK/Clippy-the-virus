@@ -10,26 +10,26 @@ from time import sleep
 SPI_SETDESKWALLPAPER = 20
 
 
-simp_path1 = '../assets/clippy.png'
+simp_path1 = 'assets/clippy.png'
 abs_path1 = os.path.abspath(simp_path1)
 
-simp_path2 = '../assets/clippy2.png'
+simp_path2 = 'assets/clippy2.png'
 abs_path2 = os.path.abspath(simp_path2)
 
 
-simp_path3 = '../assets/clippy3.png'
+simp_path3 = 'assets/clippy3.png'
 abs_path3 = os.path.abspath(simp_path3)
 
 
-simp_path4 = '../assets/clippy4.png'
+simp_path4 = 'assets/clippy4.png'
 abs_path4 = os.path.abspath(simp_path4)
 
 
-simp_path5 = '../assets/clippy5.png'
+simp_path5 = 'assets/clippy5.png'
 abs_path5 = os.path.abspath(simp_path5)
 
 
-simp_path6 = '../assets/clippy6.png'
+simp_path6 = 'assets/clippy6.png'
 abs_path6 = os.path.abspath(simp_path6)
 
 WALLPAPER_PATH1 = abs_path1
@@ -74,14 +74,8 @@ def main(arg):
     if arg == 6:
         r = sys_parameters_info(SPI_SETDESKWALLPAPER, 0, WALLPAPER_PATH6, 3)
         
-        
-        #sleep(0.1)
-        #r = sys_parameters_info(SPI_SETDESKWALLPAPER, 0, WALLPAPER_PATH2, 3)
 
 
 if __name__ == "__main__":
     arg = int(sys.argv[1])
-    main(arg)
-
-
-
+    main()

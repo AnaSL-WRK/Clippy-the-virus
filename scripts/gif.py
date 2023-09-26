@@ -1,9 +1,7 @@
 from tkinter import *
 from random import randint
 import time
-import threading
-
-
+import os, ctypes
 
 root = Tk()
 global sec
@@ -11,14 +9,20 @@ sec = 60
 global timeout_start
 timeout_start = time.time()
 
-def gif():
 
+
+
+
+def gif():
+    simp_path1 = 'assets/spin_clip.gif'
+    abs_path1 = os.path.abspath(simp_path1)
+    
     width = root.winfo_screenwidth()
     height = root.winfo_screenheight()
 
 
     frameCnt = 20
-    frames = [PhotoImage(file='../assets/spin_clip.gif', format='gif -index %i' % i) for i in range(frameCnt)]
+    frames = [PhotoImage(file=abs_path1, format='gif -index %i' % i) for i in range(frameCnt)]
 
     def update(ind):
 
@@ -29,6 +33,7 @@ def gif():
             ind = 0
         label.configure(image=frame)
         root.after(100, update, ind)
+        
         
         
         if time.time() < timeout_start + sec:

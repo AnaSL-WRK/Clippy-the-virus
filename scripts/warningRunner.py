@@ -3,6 +3,7 @@ import multiprocessing
 import subprocess
 import time
 import os
+import ctypes
         
 
 def run_vbscript(vbscript_filename):
@@ -11,30 +12,20 @@ def run_vbscript(vbscript_filename):
     except subprocess.CalledProcessError as e:
         print(f"Error running {vbscript_filename}: {e}")
         
-        
-def run_script(script_name, arg1):
-    try:
-        module = importlib.import_module(script_name)
-        # Assuming there's a function named 'main' in your script to run
-        module.main(arg1)
-        
-    except ImportError:
-        print(f"Failed to import {script_name}")
-
+    
 
 
 
 
 def main():
-    scripts_to_run = ["gif", "change_desk"]
 
     processes = []
 
     
     
-    for i in range(60):
-        process = multiprocessing.Process(target=run_vbscript, args=("popup.vbs",))
-        process.start() 
+    for i in range(50):
+        process = multiprocessing.Process(target=run_vbscript, args=("scripts/popup.vbs",))
+        process.start()
         i+=1 
     
     time.sleep(60)

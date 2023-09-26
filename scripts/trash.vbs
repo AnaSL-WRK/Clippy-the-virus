@@ -16,49 +16,40 @@ Ask
 
 
 
-
 Sub Ask
     ans = MsgBox("Do you wish to sacrifice your trash bin to Clippy?", vbYesNo + vbQuestion, "")
     If ans = vbYes Then
         itemCount = oRecycleBin.Items.Count
 
-            If itemCount = 0 Then
-                conf = MsgBox("The Recycle Bin is empty. Are you trying to trick Clippy?", vbCritical + vbSystemModal + vbYesNo)
+        If itemCount = 0 Then
+            conf = MsgBox("The Recycle Bin is empty. Are you trying to trick Clippy?", vbCritical + vbSystemModal + vbYesNo)
 
-                    If conf = vbYes Then
-                        objShell.Run command, 0, True
-                        Exit Sub
-                    Else
-                        Ask
-                        Exit Sub
-                    End If
+            If conf = vbYes Then
+                objShell.Run command, 0, True
+                
+                Exit Sub
+            Else
+                Ask
+                Exit Sub
             End If
-        EmptyRecycler
-        MsgBox"Thank you for the kind donation", vbOKOnly + vbInformation, ""
+        End If
 
+        EmptyRecycler
+        MsgBox "Thank you for the kind donation", vbOKOnly + vbInformation, ""
+        WScript.Echo 0
     Else
         For i = 1 To 10
             ans = MsgBox("Do you wish to sacrifice your trash bin to Clippy?", vbYesNo + vbQuestion, "")
-
+            
             If ans = vbYes Then
-                ans = MsgBox("Do you wish to sacrifice your trash bin to Clippy?", vbYesNo + vbQuestion, "")
                 Exit For
             End If
         Next
 
-        Ask
-            Exit Sub
-
-        Else
-            objShell.Run command, 0, True
-        End If
-
+        ' If none of the Yes options was chosen within the loop, run the command
+        objShell.Run command, 0, True
     End If
 End Sub
-
-
-
-
 
 
 
